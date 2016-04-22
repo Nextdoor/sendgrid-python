@@ -2,16 +2,11 @@ import sys
 import json
 from socket import timeout
 from .version import __version__
-try:
-    import urllib.request as urllib_request
-    from urllib.parse import urlencode
-    from urllib.error import HTTPError
-    from urllib.error import URLError
-except ImportError:  # Python 2
-    import urllib2 as urllib_request
-    from urllib2 import HTTPError
-    from urllib2 import URLError
-    from urllib import urlencode
+# Python 2
+import urllib2 as urllib_request
+from urllib2 import HTTPError
+from urllib2 import URLError
+from urllib import urlencode
 
 from .exceptions import SendGridClientError, SendGridServerError
 
